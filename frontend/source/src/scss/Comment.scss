@@ -1,0 +1,134 @@
+button:disabled,
+button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc !important;
+    color: #666666 !important;
+    cursor: no-drop !important;
+}
+
+.contentContainer {
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.telenor.boxContainer {
+    width: 410px;
+    height: 180px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+
+    div.lineSplit {
+        width: 100%;
+        height: 1px;
+        background: #dcdee3;
+    }
+
+    .telenorHeader {
+        color: #8899a6;
+        font-size: 15px;
+        font-weight: 500;
+        overflow: hidden;
+        line-height: 35px;
+        margin-left: 30px;
+    }
+
+    .messageBox {
+        width: 93%;
+        padding: 5px;
+        resize: none;
+        height: 60px;
+        color: #292F33;
+        display: block;
+        font-size: 13px;
+        font-weight: 200;
+        margin: 10px auto;
+        border-radius: 3px;
+        border: 1px solid #a3d4f2;
+    }
+
+    .messageBox:focus {
+        outline: none;
+    }
+
+    .wordCounter {
+        background-color: transparent;
+        color: #8899a6;
+        display: inline-block;
+        width: 70%;
+        border: 0;
+        padding: 0 15px;
+        position: relative;
+        vertical-align: top;
+        top: 10px;
+        text-align: right;
+        font-size: 14px;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
+    }
+
+    .postButton {
+        width: 80px;
+        height: 35px;
+        border: none;
+        float: right;
+        color: #FFFFFF;
+        display: block;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 3px;
+        margin: 0 10px 0 0;
+        background-color: #1b95e0;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+        border: 1px solid transparent;
+    }
+
+    .postButton:hover,
+    .postButton:visited {
+        outline: none;
+    }
+
+    .postButton:visited {
+        outline: none;
+        box-shadow: 0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15);
+    }
+
+    .postButton:active {
+        background-color: #3B5998;
+        border-color: #2f477a #314a7f #334c83;
+        box-shadow: 0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15);
+    }
+
+    /*   */
+    .close {
+        cursor: pointer;
+        float: right;
+        margin: 12px;
+        width: 10px;
+        height: 10px;
+        opacity: 0.6;
+    }
+
+    .close:hover {
+        opacity: 1;
+    }
+
+    .close:before,
+    .close:after {
+        position: absolute;
+        content: ' ';
+        height: 13px;
+        width: 2px;
+        background-color: #333;
+    }
+
+    .close:before {
+        transform: rotate(45deg);
+    }
+
+    .close:after {
+        transform: rotate(-45deg);
+    }
+}
