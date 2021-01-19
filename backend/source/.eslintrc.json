@@ -17,10 +17,18 @@
         "no-console": ["off"],
         "no-unused-vars": ["warn"],
         "object-curly-spacing": ["error", "always"],
-        "arrow-parens": ["error", "as-needed", {"requireForBlockBody": false}],
-        "max-len": ["warn", 150, 4],
+        "arrow-parens": ["error", "always", {"requireForBlockBody": false}],
+        "max-len": ["warn", 120, 4],
         "class-methods-use-this": ["off"],
         "no-param-reassign": ["warn"],
-        "prefer-template": ["error"]
+        "prefer-template": ["error"],
+        "key-spacing": ["error", { "mode": "strict" }],
+        "keyword-spacing": ["error", {
+            "before": true,
+            "after": true
+        }],
+        "space-infix-ops": "error",
+        "no-multi-spaces": "error",
+        "require-atomic-updates": ["off"]
     }
 }

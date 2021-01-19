@@ -1,31 +1,39 @@
-version: "3"
+version: "3.5"
 services:
   frontendgenerator:
     build:
       context: ./frontend
-    container_name: frontendgenerator
+    container_name: frontendgenerator_moviecrashhh_admin
     volumes:
       - ./frontend/source:/home/app:rw
-    working_dir: /home/app
+    networks:
+      - moviecrashhh-admin-network
   backend:
     build:
       context: ./backend
-    container_name: backend
-    environment:
-      - APP_ENVIRONMENT=dev
+    container_name: backend_moviecrashhh-admin
     env_file:
-      - ./environments.env
+      - ./backend/environments.env
     volumes:
       - ./backend/source:/home/app:rw
       - ./frontend/source:/home/app/fe:ro
     ports:
-      - "80:3000"
-  mongo:
-    image: mongo
-    restart: always
-    container_name: mongodb
+      - "9231:9231"
+      - "3011:3011"
+    networks:
+      - moviecrashhh-admin-network
+  nginx:
+    build:
+      context: ./nginx
+    container_name: sslnginx_moviecrashhh-admin
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      - APP_ENVIRONMENT=dev
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - moviecrashhh-admin-network
     ports:
-      - "27017:27017"
+      - "89:89"
+networks:
+  moviecrashhh-admin-network:
+    external: true
